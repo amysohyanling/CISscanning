@@ -1,0 +1,14 @@
+---
+- name: bzip2 and openscap-utils are installed
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: install bzip2 and openscap-utils
+      community.general.pacman:
+        name:
+          - bzip2
+          - openscap-utils
+        state: present
+
+        

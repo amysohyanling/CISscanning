@@ -1,0 +1,14 @@
+---
+- name: install openscap scanner
+  hosts: all
+  become: true
+  
+  tasks:
+    - name: install openscap-scanner and scap-security-guide
+      ansible.builtin.package:
+        name:
+          - openscap-scanner
+          - scap-security-guide
+        state: latest
+
+      

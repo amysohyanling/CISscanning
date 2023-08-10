@@ -1,0 +1,17 @@
+---
+- name: run openscap
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Download the latest RHSA OVAL definitions
+      ansible.builtin.command: 
+        wget -O - https://www.redhat.com/security/data/oval/v2/RHEL8/rhel-8.oval.xml.bz2 \
+        bzip2 --decompress > rhel-8.oval.xml
+
+    - name: Run openscap-scanner
+      ansible.builtin.command:
+        oscap oval eval --report vulnerability.html rhel-8.oval.xml
+
+    
+        
