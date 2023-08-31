@@ -14,4 +14,4 @@
     - name: copy the file
       ansible.builtin.fetch:
         src: /root/report.html
-        dest: /root/report/
+        dest: /root/report/192.168.124.110
