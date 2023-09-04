@@ -11,7 +11,8 @@
         /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml
       ignore_errors: true
  
-    - name: copy the file
+    - name: copy the file from remote to localhost
       ansible.builtin.fetch:
         src: /root/report.html
-        dest: /root/report/192.168.124.110
+        dest: /root/report/
+        flat: no
