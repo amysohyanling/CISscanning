@@ -1,0 +1,11 @@
+---
+- name: run openscap
+  hosts: all
+  become: yes
+  tasks:
+  
+    - name: copy the file from remote to localhost
+      ansible.builtin.fetch:
+        src: /root/report.html
+        dest: /root/report/
+        flat: no
