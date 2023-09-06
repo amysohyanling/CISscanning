@@ -5,7 +5,7 @@
   tasks:
 
     - name: run the command ls 
-      ansible.builtin.command: ls -l
+      ansible.builtin.command: ls -all
       register: command_output
 
     - name: copy the file from remote to localhost
