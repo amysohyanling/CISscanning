@@ -1,5 +1,5 @@
 ---
-- name: run openscap
+- name: fetch html to localhost
   hosts: all
   become: yes
   tasks:
@@ -7,7 +7,7 @@
     - name: copy the file from remote to localhost
       ansible.builtin.fetch:
         src: /root/report/report.html
-        dest: /home/amyaaphub/report
+        dest: /amy/report
         owner: awx
         group: awx
         mode: 0775
