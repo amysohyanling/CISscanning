@@ -11,7 +11,7 @@
     - name: copy the file from remote to localhost
       ansible.builtin.fetch:
         src: report/report.html
-        dest: /./
+        dest: /amy/report/cd 
         owner: awx
         group: awx
         mode: 0775
