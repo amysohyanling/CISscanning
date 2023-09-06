@@ -12,7 +12,6 @@
       ansible.builtin.fetch:
         src: /root/report/report.html
         dest: /amy/report/
-        owner: awx
         group: awx
         mode: 0775
         flat: yes
