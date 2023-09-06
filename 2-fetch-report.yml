@@ -8,3 +8,7 @@
       ansible.builtin.fetch:
         src: ./report.html
         dest: /home/amyaaphub/report
+        owner: awx
+        group: awx
+        mode: 0775
+        flat: yes
