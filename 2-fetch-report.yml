@@ -10,6 +10,11 @@
 
     - name: copy the file from remote to localhost
       ansible.builtin.fetch:
+        src: /root/report/index.html
+        dest: /tmp/index.html
+        flat: true
+
+      ansible.builtin.fetch:
         src: /root/report/report.html
         dest: /amy/report/
         group: awx
