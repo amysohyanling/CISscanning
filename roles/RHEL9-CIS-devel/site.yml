@@ -4,4 +4,4 @@
 
   roles:
 
-      - role: "{{ playbook_dir }}"
+      - role: "RHEL9-CIS-devel"
