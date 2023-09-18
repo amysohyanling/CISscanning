@@ -1,11 +1,11 @@
 ---
 # defaults file for rhel9-cis
 
-system_is_container: true
+system_is_container: false
 container_vars_file: is_container.yml
 # rhel9cis is left off the front of this var for consistency in testing pipeline
-# system_is_ec2 toggle will disable tasks that fail on Amazon EC2 instances. Set true to skip and true to run tasks
-system_is_ec2: true
+# system_is_ec2 toggle will disable tasks that fail on Amazon EC2 instances. Set true to skip and false to run tasks
+system_is_ec2: false
 
 # Run the OS validation check
 # Supported OSs will not need for this to be changed - see README e.g. CentOS
@@ -25,8 +25,8 @@ rhel9cis_section6: true
 rhel9cis_level_1: true
 rhel9cis_level_2: true
 
-rhel9cis_selinux_disable: true
-rhel9cis_legacy_boot: true
+rhel9cis_selinux_disable: false
+rhel9cis_legacy_boot: false
 
 ## Python Binary
 ## This is used for python3 Installations where python2 OS modules are used in ansible
@@ -43,13 +43,13 @@ benchmark: RHEL9-CIS
 skip_reboot: true
 
 # default value will change to true but wont reboot if not enabled but will error
-change_requires_reboot: true
+change_requires_reboot: false
 
 #### Basic external goss audit enablement settings ####
 #### Precise details - per setting can be found at the bottom of this file ####
 
 ### Goss is required on the remote host
-setup_audit: true
+setup_audit: false
 # How to retrive goss
 # Options are copy or download - detailed settings at the bottom of this file
 # you will need to access to either github or the file already dowmloaded
@@ -60,7 +60,7 @@ get_audit_binary_method: download
 audit_content: git
 
 # enable audits to run - this  runs the audit and get the latest content
-run_audit: true
+run_audit: false
 
 # Timeout for those cmds that take longer to run where timeout set
 audit_cmd_timeout: 60000
@@ -351,10 +351,10 @@ rhel9cis_rule_6_2_16: true
 # The value must contain nosuid,nodev,noexec to conform to CIS standards
 # rhel9cis_tmp_tmpfs_settings: "defaults,rw,nosuid,nodev,noexec,relatime 0 0"
 # If set true uses the tmp.mount service else using fstab configuration
-rhel9cis_tmp_svc: true
+rhel9cis_tmp_svc: false
 
 #### 1.1.9
-rhel9cis_allow_autofs: true
+rhel9cis_allow_autofs: false
 
 # 1.2.1
 # This is the login information for your RedHat Subscription
@@ -366,7 +366,7 @@ rhel9cis_rh_sub_password: password
 # 1.2.2
 # Do you require rhnsd
 # RedHat Satellite Subscription items
-rhel9cis_rhnsd_required: true
+rhel9cis_rhnsd_required: false
 
 # 1.2.4 repo_gpgcheck
 rhel9cis_rhel_default_repo: true
@@ -389,7 +389,7 @@ rhel9cis_crypto_policy: 'DEFAULT'
 rhel9cis_crypto_policy_module: ''
 
 # System network parameters (host only OR host and router)
-rhel9cis_is_router: true
+rhel9cis_is_router: false
 
 # IPv6 required
 rhel9cis_ipv6_required: true
@@ -427,47 +427,47 @@ rhel9cis_chrony_server_options: "minpoll 8"
 
 ### 2.2 Special Purposes
 ##### Service configuration booleans set true to keep service
-rhel9cis_gui: true
-rhel9cis_avahi_server: true
-rhel9cis_cups_server: true
-rhel9cis_dhcp_server: true
-rhel9cis_dns_server: true
-rhel9cis_dnsmasq_server: true
-rhel9cis_vsftpd_server: true
-rhel9cis_tftp_server: true
-rhel9cis_httpd_server: true
-rhel9cis_nginx_server: true
-rhel9cis_dovecot_server: true
-rhel9cis_imap_server: true
-rhel9cis_samba_server: true
-rhel9cis_squid_server: true
-rhel9cis_snmp_server: true
-rhel9cis_telnet_server: true
-rhel9cis_is_mail_server: true
+rhel9cis_gui: false
+rhel9cis_avahi_server: false
+rhel9cis_cups_server: false
+rhel9cis_dhcp_server: false
+rhel9cis_dns_server: false
+rhel9cis_dnsmasq_server: false
+rhel9cis_vsftpd_server: false
+rhel9cis_tftp_server: false
+rhel9cis_httpd_server: false
+rhel9cis_nginx_server: false
+rhel9cis_dovecot_server: false
+rhel9cis_imap_server: false
+rhel9cis_samba_server: false
+rhel9cis_squid_server: false
+rhel9cis_snmp_server: false
+rhel9cis_telnet_server: false
+rhel9cis_is_mail_server: false
 # Note the options
 # Packages are used for client services and Server- only remove if you dont use the client service
 #
 
-rhel9cis_use_nfs_server: true
-rhel9cis_use_nfs_service: true
+rhel9cis_use_nfs_server: false
+rhel9cis_use_nfs_service: false
 
-rhel9cis_use_rpc_server: true
-rhel9cis_use_rpc_service: true
+rhel9cis_use_rpc_server: false
+rhel9cis_use_rpc_service: false
 
-rhel9cis_use_rsync_server: true
-rhel9cis_use_rsync_service: true
+rhel9cis_use_rsync_server: false
+rhel9cis_use_rsync_service: false
 
 #### 2.3 Service clients
-rhel9cis_telnet_required: true
-rhel9cis_openldap_clients_required: true
-rhel9cis_tftp_client: true
-rhel9cis_ftp_client: true
+rhel9cis_telnet_required: false
+rhel9cis_openldap_clients_required: false
+rhel9cis_tftp_client: false
+rhel9cis_ftp_client: false
 
 ## Section3 vars
 ## Sysctl
-rhel9cis_sysctl_update: true
-rhel9cis_flush_ipv4_route: true
-rhel9cis_flush_ipv6_route: true
+rhel9cis_sysctl_update: false
+rhel9cis_flush_ipv4_route: false
+rhel9cis_flush_ipv6_route: false
 
 ### Firewall Service - either firewalld, iptables, or nftables
 #### Some control allow for services to be removed or masked
@@ -509,10 +509,10 @@ rhel9cis_audit_back_log_limit: 8192
 rhel9cis_max_log_file_size: 10
 
 ### 4.1.3.x audit template
-update_audit_template: true
+update_audit_template: false
 
 ## Advanced option found in auditd post
-rhel9cis_allow_auditd_uid_user_exclusions: true
+rhel9cis_allow_auditd_uid_user_exclusions: false
 
 # This can be used to configure other keys in auditd.conf
 rhel9cis_auditd_extra_conf: {}
@@ -527,7 +527,7 @@ rhel9cis_syslog: rsyslog
 rhel9cis_rsyslog_ansiblemanaged: true
 
 #### 4.2.1.6 remote and destation log server name
-rhel9cis_remote_log_server: true
+rhel9cis_remote_log_server: false
 rhel9cis_remote_log_host: logagg.example.com
 rhel9cis_remote_log_port: 514
 rhel9cis_remote_log_protocol: tcp
@@ -535,7 +535,7 @@ rhel9cis_remote_log_retrycount: 100
 rhel9cis_remote_log_queuesize: 1000
 
 #### 4.2.1.7
-rhel9cis_system_is_log_server: true
+rhel9cis_system_is_log_server: false
 
 # 4.2.2.1.2
 # rhel9cis_journal_upload_url is the ip address to upload the journal entries to
@@ -582,7 +582,7 @@ rhel9cis_ssh_maxsessions: 4
 rhel9cis_inactivelock:
     lock_days: 30
 
-rhel9cis_use_authconfig: true
+rhel9cis_use_authconfig: false
 # 5.3.1/5.3.2 Custom authselect profile settings. Settings in place now will fail, they are place holders from the control example
 # Due to the way many multiple options and ways to configure this control needs to be enabled and settings adjusted to minimise risk
 rhel9cis_authselect:
@@ -591,10 +591,10 @@ rhel9cis_authselect:
     options: with-sudo with-faillock without-nullok
 
 # 5.3.1 Enable automation to create custom profile settings, using the settings above
-rhel9cis_authselect_custom_profile_create: true
+rhel9cis_authselect_custom_profile_create: false
 
 # 5.3.2 Enable automation to select custom profile options, using the settings above
-rhel9cis_authselect_custom_profile_select: true
+rhel9cis_authselect_custom_profile_select: false
 
 rhel9cis_pass:
     max_days: 365
@@ -614,7 +614,7 @@ rhel9cis_pam_faillock:
 
 # UID settings for interactive users
 # These are discovered via logins.def if set true
-discover_int_uid: true
+discover_int_uid: false
 min_int_uid: 1000
 max_int_uid: 65533
 
@@ -628,7 +628,7 @@ rhel9cis_sudo_timestamp_timeout: 15
 ## This option is used at your own risk it will enable faillock for users
 ## Only to be used on a new clean system if not using authselect
 ## THIS CAN BREAK ACCESS EVEN FOR ROOT - UNDERSTAND RISKS ##
-rhel9cis_add_faillock_without_authselect: true
+rhel9cis_add_faillock_without_authselect: false
 # This needs to be set to ACCEPT
 rhel9cis_5_4_2_risks: NEVER
 
@@ -638,7 +638,7 @@ rhel9cis_5_4_2_risks: NEVER
 rhel9cis_shell_session_timeout:
     file: /etc/profile.d/tmout.sh
     timeout: 600
-# RHEL-09-5.4.1.5 Allow ansible to expire password for account with a last changed date in the future. true will just display users in violation, true will expire those users passwords
+# RHEL-09-5.4.1.5 Allow ansible to expire password for account with a last changed date in the future. False will just display users in violation, true will expire those users passwords
 rhel9cis_futurepwchgdate_autofix: true
 
 # 5.3.7
@@ -649,13 +649,13 @@ rhel9cis_sugroup: nosugroup
 # RHEL-09_6.1.1
 rhel9cis_rpm_audit_file: /var/tmp/rpm_file_check
 
-# RHEL-09_6.1.10 Allow ansible to adjust world-writable files. true will just display world-writable files, true will remove world-writable
+# RHEL-09_6.1.10 Allow ansible to adjust world-writable files. False will just display world-writable files, True will remove world-writable
 rhel9cis_no_world_write_adjust: true
 rhel9cis_passwd_label: "{{ (this_item | default(item)).id }}: {{ (this_item | default(item)).dir }}"
 
 # 6.2.16
 ## Dont follow symlinks for changes to user home directory thanks to @dulin-gnet and comminty for rhel8-cis reedbacj
-rhel_09_6_2_16_home_follow_symlinks: true
+rhel_09_6_2_16_home_follow_symlinks: false
 
 #### Goss Configuration Settings ####
 # Set correct env for the run_audit.sh script from https://github.com/ansible-lockdown/{{ benchmark }}-Audit.git"
