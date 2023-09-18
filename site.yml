@@ -5,8 +5,6 @@
   roles:
 
       - role: "RHEL9-CIS-devel"
-<<<<<<< HEAD:site.yml
-=======
 
   vars:
     - rhel9cis_rule_1_1_1_1: true
@@ -80,5 +78,3 @@
     - rhel9cis_rule_1_8_10: true
     - rhel9cis_rule_1_9: true
     - rhel9cis_rule_1_10: true
-
->>>>>>> 0a88759f5050485da5683ad9fd4bed848675b5f3:roles/RHEL9-CIS-devel/site.yml
