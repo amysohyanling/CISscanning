@@ -4,26 +4,26 @@
 system_is_container: false
 container_vars_file: is_container.yml
 # rhel9cis is left off the front of this var for consistency in testing pipeline
-# system_is_ec2 toggle will disable tasks that fail on Amazon EC2 instances. Set true to skip and false to run tasks
+# system_is_ec2 toggle will disable tasks that fail on Amazon EC2 instances. Set false to skip and false to run tasks
 system_is_ec2: false
 
 # Run the OS validation check
 # Supported OSs will not need for this to be changed - see README e.g. CentOS
-os_check: true
+os_check: false
 
-rhel9cis_section1: true
-rhel9cis_section2: true
-rhel9cis_section3: true
-rhel9cis_section4: true
-rhel9cis_section5: true
-rhel9cis_section6: true
+rhel9cis_section1: false
+rhel9cis_section2: false
+rhel9cis_section3: false
+rhel9cis_section4: false
+rhel9cis_section5: false
+rhel9cis_section6: false
 
 # This is used for audit purposes to run only specifc level use the tags
 # e.g.
 # - level1-server
 # - level2-workstation
-rhel9cis_level_1: true
-rhel9cis_level_2: true
+rhel9cis_level_1: false
+rhel9cis_level_2: false
 
 rhel9cis_selinux_disable: false
 rhel9cis_legacy_boot: false
@@ -40,9 +40,9 @@ benchmark_version: 'v1.0.0'
 benchmark: RHEL9-CIS
 
 # Whether to skip the reboot
-skip_reboot: true
+skip_reboot: false
 
-# default value will change to true but wont reboot if not enabled but will error
+# default value will change to false but wont reboot if not enabled but will error
 change_requires_reboot: false
 
 #### Basic external goss audit enablement settings ####
@@ -73,276 +73,276 @@ audit_cmd_timeout: 60000
 # PLEASE NOTE: These work in coordination with the section # group variables and tags.
 # You must enable an entire section in order for the variables below to take effect.
 # Section 1 rules
-rhel9cis_rule_1_1_1_1: true
-rhel9cis_rule_1_1_1_2: true
-rhel9cis_rule_1_1_2_1: true
-rhel9cis_rule_1_1_2_2: true
-rhel9cis_rule_1_1_2_3: true
-rhel9cis_rule_1_1_2_4: true
-rhel9cis_rule_1_1_3_1: true
-rhel9cis_rule_1_1_3_2: true
-rhel9cis_rule_1_1_3_3: true
-rhel9cis_rule_1_1_4_1: true
-rhel9cis_rule_1_1_4_2: true
-rhel9cis_rule_1_1_4_3: true
-rhel9cis_rule_1_1_4_4: true
-rhel9cis_rule_1_1_5_1: true
-rhel9cis_rule_1_1_5_2: true
-rhel9cis_rule_1_1_5_3: true
-rhel9cis_rule_1_1_5_4: true
-rhel9cis_rule_1_1_6_1: true
-rhel9cis_rule_1_1_6_2: true
-rhel9cis_rule_1_1_6_3: true
-rhel9cis_rule_1_1_6_4: true
-rhel9cis_rule_1_1_7_1: true
-rhel9cis_rule_1_1_7_2: true
-rhel9cis_rule_1_1_7_3: true
-rhel9cis_rule_1_1_8_1: true
-rhel9cis_rule_1_1_8_2: true
-rhel9cis_rule_1_1_8_3: true
-rhel9cis_rule_1_1_8_4: true
-rhel9cis_rule_1_1_18: true
-rhel9cis_rule_1_1_19: true
-rhel9cis_rule_1_1_20: true
-rhel9cis_rule_1_1_21: true
-rhel9cis_rule_1_1_9: true
-rhel9cis_rule_1_2_1: true
-rhel9cis_rule_1_2_2: true
-rhel9cis_rule_1_2_3: true
-rhel9cis_rule_1_2_4: true
-rhel9cis_rule_1_3_1: true
-rhel9cis_rule_1_3_2: true
-rhel9cis_rule_1_3_3: true
-rhel9cis_rule_1_4_1: true
-rhel9cis_rule_1_4_2: true
-rhel9cis_rule_1_5_1: true
-rhel9cis_rule_1_5_2: true
-rhel9cis_rule_1_5_3: true
-rhel9cis_rule_1_6_1_1: true
-rhel9cis_rule_1_6_1_2: true
-rhel9cis_rule_1_6_1_3: true
-rhel9cis_rule_1_6_1_4: true
-rhel9cis_rule_1_6_1_5: true
-rhel9cis_rule_1_6_1_6: true
-rhel9cis_rule_1_6_1_7: true
-rhel9cis_rule_1_6_1_8: true
-rhel9cis_rule_1_7_1: true
-rhel9cis_rule_1_7_2: true
-rhel9cis_rule_1_7_3: true
-rhel9cis_rule_1_7_4: true
-rhel9cis_rule_1_7_5: true
-rhel9cis_rule_1_7_6: true
-rhel9cis_rule_1_8_1: true
-rhel9cis_rule_1_8_2: true
-rhel9cis_rule_1_8_3: true
-rhel9cis_rule_1_8_4: true
-rhel9cis_rule_1_8_5: true
-rhel9cis_rule_1_8_6: true
-rhel9cis_rule_1_8_7: true
-rhel9cis_rule_1_8_8: true
-rhel9cis_rule_1_8_9: true
-rhel9cis_rule_1_8_10: true
-rhel9cis_rule_1_9: true
-rhel9cis_rule_1_10: true
+rhel9cis_rule_1_1_1_1: false
+rhel9cis_rule_1_1_1_2: false
+rhel9cis_rule_1_1_2_1: false
+rhel9cis_rule_1_1_2_2: false
+rhel9cis_rule_1_1_2_3: false
+rhel9cis_rule_1_1_2_4: false
+rhel9cis_rule_1_1_3_1: false
+rhel9cis_rule_1_1_3_2: false
+rhel9cis_rule_1_1_3_3: false
+rhel9cis_rule_1_1_4_1: false
+rhel9cis_rule_1_1_4_2: false
+rhel9cis_rule_1_1_4_3: false
+rhel9cis_rule_1_1_4_4: false
+rhel9cis_rule_1_1_5_1: false
+rhel9cis_rule_1_1_5_2: false
+rhel9cis_rule_1_1_5_3: false
+rhel9cis_rule_1_1_5_4: false
+rhel9cis_rule_1_1_6_1: false
+rhel9cis_rule_1_1_6_2: false
+rhel9cis_rule_1_1_6_3: false
+rhel9cis_rule_1_1_6_4: false
+rhel9cis_rule_1_1_7_1: false
+rhel9cis_rule_1_1_7_2: false
+rhel9cis_rule_1_1_7_3: false
+rhel9cis_rule_1_1_8_1: false
+rhel9cis_rule_1_1_8_2: false
+rhel9cis_rule_1_1_8_3: false
+rhel9cis_rule_1_1_8_4: false
+rhel9cis_rule_1_1_18: false
+rhel9cis_rule_1_1_19: false
+rhel9cis_rule_1_1_20: false
+rhel9cis_rule_1_1_21: false
+rhel9cis_rule_1_1_9: false
+rhel9cis_rule_1_2_1: false
+rhel9cis_rule_1_2_2: false
+rhel9cis_rule_1_2_3: false
+rhel9cis_rule_1_2_4: false
+rhel9cis_rule_1_3_1: false
+rhel9cis_rule_1_3_2: false
+rhel9cis_rule_1_3_3: false
+rhel9cis_rule_1_4_1: false
+rhel9cis_rule_1_4_2: false
+rhel9cis_rule_1_5_1: false
+rhel9cis_rule_1_5_2: false
+rhel9cis_rule_1_5_3: false
+rhel9cis_rule_1_6_1_1: false
+rhel9cis_rule_1_6_1_2: false
+rhel9cis_rule_1_6_1_3: false
+rhel9cis_rule_1_6_1_4: false
+rhel9cis_rule_1_6_1_5: false
+rhel9cis_rule_1_6_1_6: false
+rhel9cis_rule_1_6_1_7: false
+rhel9cis_rule_1_6_1_8: false
+rhel9cis_rule_1_7_1: false
+rhel9cis_rule_1_7_2: false
+rhel9cis_rule_1_7_3: false
+rhel9cis_rule_1_7_4: false
+rhel9cis_rule_1_7_5: false
+rhel9cis_rule_1_7_6: false
+rhel9cis_rule_1_8_1: false
+rhel9cis_rule_1_8_2: false
+rhel9cis_rule_1_8_3: false
+rhel9cis_rule_1_8_4: false
+rhel9cis_rule_1_8_5: false
+rhel9cis_rule_1_8_6: false
+rhel9cis_rule_1_8_7: false
+rhel9cis_rule_1_8_8: false
+rhel9cis_rule_1_8_9: false
+rhel9cis_rule_1_8_10: false
+rhel9cis_rule_1_9: false
+rhel9cis_rule_1_10: false
 
 # Section 2 rules
-rhel9cis_rule_2_1_1: true
-rhel9cis_rule_2_1_2: true
-rhel9cis_rule_2_2_1: true
-rhel9cis_rule_2_2_2: true
-rhel9cis_rule_2_2_3: true
-rhel9cis_rule_2_2_4: true
-rhel9cis_rule_2_2_5: true
-rhel9cis_rule_2_2_6: true
-rhel9cis_rule_2_2_7: true
-rhel9cis_rule_2_2_8: true
-rhel9cis_rule_2_2_9: true
-rhel9cis_rule_2_2_10: true
-rhel9cis_rule_2_2_11: true
-rhel9cis_rule_2_2_12: true
-rhel9cis_rule_2_2_13: true
-rhel9cis_rule_2_2_14: true
-rhel9cis_rule_2_2_15: true
-rhel9cis_rule_2_2_16: true
-rhel9cis_rule_2_2_17: true
-rhel9cis_rule_2_2_18: true
-rhel9cis_rule_2_3_1: true
-rhel9cis_rule_2_3_2: true
-rhel9cis_rule_2_3_3: true
-rhel9cis_rule_2_3_4: true
-rhel9cis_rule_2_4: true
+rhel9cis_rule_2_1_1: false
+rhel9cis_rule_2_1_2: false
+rhel9cis_rule_2_2_1: false
+rhel9cis_rule_2_2_2: false
+rhel9cis_rule_2_2_3: false
+rhel9cis_rule_2_2_4: false
+rhel9cis_rule_2_2_5: false
+rhel9cis_rule_2_2_6: false
+rhel9cis_rule_2_2_7: false
+rhel9cis_rule_2_2_8: false
+rhel9cis_rule_2_2_9: false
+rhel9cis_rule_2_2_10: false
+rhel9cis_rule_2_2_11: false
+rhel9cis_rule_2_2_12: false
+rhel9cis_rule_2_2_13: false
+rhel9cis_rule_2_2_14: false
+rhel9cis_rule_2_2_15: false
+rhel9cis_rule_2_2_16: false
+rhel9cis_rule_2_2_17: false
+rhel9cis_rule_2_2_18: false
+rhel9cis_rule_2_3_1: false
+rhel9cis_rule_2_3_2: false
+rhel9cis_rule_2_3_3: false
+rhel9cis_rule_2_3_4: false
+rhel9cis_rule_2_4: false
 
 # Section 3 rules
-rhel9cis_rule_3_1_1: true
-rhel9cis_rule_3_1_2: true
-rhel9cis_rule_3_1_3: true
-rhel9cis_rule_3_2_1: true
-rhel9cis_rule_3_2_2: true
-rhel9cis_rule_3_3_1: true
-rhel9cis_rule_3_3_2: true
-rhel9cis_rule_3_3_3: true
-rhel9cis_rule_3_3_4: true
-rhel9cis_rule_3_3_5: true
-rhel9cis_rule_3_3_6: true
-rhel9cis_rule_3_3_7: true
-rhel9cis_rule_3_3_8: true
-rhel9cis_rule_3_3_9: true
-rhel9cis_rule_3_4_1_1: true
-rhel9cis_rule_3_4_1_2: true
-rhel9cis_rule_3_4_2_1: true
-rhel9cis_rule_3_4_2_2: true
-rhel9cis_rule_3_4_2_3: true
-rhel9cis_rule_3_4_2_4: true
-rhel9cis_rule_3_4_2_5: true
-rhel9cis_rule_3_4_2_6: true
-rhel9cis_rule_3_4_2_7: true
+rhel9cis_rule_3_1_1: false
+rhel9cis_rule_3_1_2: false
+rhel9cis_rule_3_1_3: false
+rhel9cis_rule_3_2_1: false
+rhel9cis_rule_3_2_2: false
+rhel9cis_rule_3_3_1: false
+rhel9cis_rule_3_3_2: false
+rhel9cis_rule_3_3_3: false
+rhel9cis_rule_3_3_4: false
+rhel9cis_rule_3_3_5: false
+rhel9cis_rule_3_3_6: false
+rhel9cis_rule_3_3_7: false
+rhel9cis_rule_3_3_8: false
+rhel9cis_rule_3_3_9: false
+rhel9cis_rule_3_4_1_1: false
+rhel9cis_rule_3_4_1_2: false
+rhel9cis_rule_3_4_2_1: false
+rhel9cis_rule_3_4_2_2: false
+rhel9cis_rule_3_4_2_3: false
+rhel9cis_rule_3_4_2_4: false
+rhel9cis_rule_3_4_2_5: false
+rhel9cis_rule_3_4_2_6: false
+rhel9cis_rule_3_4_2_7: false
 
 # Section 4 rules
-rhel9cis_rule_4_1_1_1: true
-rhel9cis_rule_4_1_1_2: true
-rhel9cis_rule_4_1_1_3: true
-rhel9cis_rule_4_1_1_4: true
-rhel9cis_rule_4_1_2_1: true
-rhel9cis_rule_4_1_2_2: true
-rhel9cis_rule_4_1_2_3: true
-rhel9cis_rule_4_1_3_1: true
-rhel9cis_rule_4_1_3_2: true
-rhel9cis_rule_4_1_3_3: true
-rhel9cis_rule_4_1_3_4: true
-rhel9cis_rule_4_1_3_5: true
-rhel9cis_rule_4_1_3_6: true
-rhel9cis_rule_4_1_3_7: true
-rhel9cis_rule_4_1_3_8: true
-rhel9cis_rule_4_1_3_9: true
-rhel9cis_rule_4_1_3_10: true
-rhel9cis_rule_4_1_3_11: true
-rhel9cis_rule_4_1_3_12: true
-rhel9cis_rule_4_1_3_13: true
-rhel9cis_rule_4_1_3_14: true
-rhel9cis_rule_4_1_3_15: true
-rhel9cis_rule_4_1_3_16: true
-rhel9cis_rule_4_1_3_17: true
-rhel9cis_rule_4_1_3_18: true
-rhel9cis_rule_4_1_3_19: true
-rhel9cis_rule_4_1_3_20: true
-rhel9cis_rule_4_1_3_21: true
-rhel9cis_rule_4_1_4_1: true
-rhel9cis_rule_4_1_4_2: true
-rhel9cis_rule_4_1_4_3: true
-rhel9cis_rule_4_1_4_4: true
-rhel9cis_rule_4_1_4_5: true
-rhel9cis_rule_4_1_4_6: true
-rhel9cis_rule_4_1_4_7: true
-rhel9cis_rule_4_1_4_8: true
-rhel9cis_rule_4_1_4_9: true
-rhel9cis_rule_4_1_4_10: true
-rhel9cis_rule_4_2_1_1: true
-rhel9cis_rule_4_2_1_2: true
-rhel9cis_rule_4_2_1_3: true
-rhel9cis_rule_4_2_1_4: true
-rhel9cis_rule_4_2_1_5: true
-rhel9cis_rule_4_2_1_6: true
-rhel9cis_rule_4_2_1_7: true
-rhel9cis_rule_4_2_2_1_1: true
-rhel9cis_rule_4_2_2_1_2: true
-rhel9cis_rule_4_2_2_1_3: true
-rhel9cis_rule_4_2_2_1_4: true
-rhel9cis_rule_4_2_2_2: true
-rhel9cis_rule_4_2_2_3: true
-rhel9cis_rule_4_2_2_4: true
-rhel9cis_rule_4_2_2_5: true
-rhel9cis_rule_4_2_2_6: true
-rhel9cis_rule_4_2_2_7: true
-rhel9cis_rule_4_2_3: true
-rhel9cis_rule_4_3: true
+rhel9cis_rule_4_1_1_1: false
+rhel9cis_rule_4_1_1_2: false
+rhel9cis_rule_4_1_1_3: false
+rhel9cis_rule_4_1_1_4: false
+rhel9cis_rule_4_1_2_1: false
+rhel9cis_rule_4_1_2_2: false
+rhel9cis_rule_4_1_2_3: false
+rhel9cis_rule_4_1_3_1: false
+rhel9cis_rule_4_1_3_2: false
+rhel9cis_rule_4_1_3_3: false
+rhel9cis_rule_4_1_3_4: false
+rhel9cis_rule_4_1_3_5: false
+rhel9cis_rule_4_1_3_6: false
+rhel9cis_rule_4_1_3_7: false
+rhel9cis_rule_4_1_3_8: false
+rhel9cis_rule_4_1_3_9: false
+rhel9cis_rule_4_1_3_10: false
+rhel9cis_rule_4_1_3_11: false
+rhel9cis_rule_4_1_3_12: false
+rhel9cis_rule_4_1_3_13: false
+rhel9cis_rule_4_1_3_14: false
+rhel9cis_rule_4_1_3_15: false
+rhel9cis_rule_4_1_3_16: false
+rhel9cis_rule_4_1_3_17: false
+rhel9cis_rule_4_1_3_18: false
+rhel9cis_rule_4_1_3_19: false
+rhel9cis_rule_4_1_3_20: false
+rhel9cis_rule_4_1_3_21: false
+rhel9cis_rule_4_1_4_1: false
+rhel9cis_rule_4_1_4_2: false
+rhel9cis_rule_4_1_4_3: false
+rhel9cis_rule_4_1_4_4: false
+rhel9cis_rule_4_1_4_5: false
+rhel9cis_rule_4_1_4_6: false
+rhel9cis_rule_4_1_4_7: false
+rhel9cis_rule_4_1_4_8: false
+rhel9cis_rule_4_1_4_9: false
+rhel9cis_rule_4_1_4_10: false
+rhel9cis_rule_4_2_1_1: false
+rhel9cis_rule_4_2_1_2: false
+rhel9cis_rule_4_2_1_3: false
+rhel9cis_rule_4_2_1_4: false
+rhel9cis_rule_4_2_1_5: false
+rhel9cis_rule_4_2_1_6: false
+rhel9cis_rule_4_2_1_7: false
+rhel9cis_rule_4_2_2_1_1: false
+rhel9cis_rule_4_2_2_1_2: false
+rhel9cis_rule_4_2_2_1_3: false
+rhel9cis_rule_4_2_2_1_4: false
+rhel9cis_rule_4_2_2_2: false
+rhel9cis_rule_4_2_2_3: false
+rhel9cis_rule_4_2_2_4: false
+rhel9cis_rule_4_2_2_5: false
+rhel9cis_rule_4_2_2_6: false
+rhel9cis_rule_4_2_2_7: false
+rhel9cis_rule_4_2_3: false
+rhel9cis_rule_4_3: false
 
 # Section 5 rules
-rhel9cis_rule_5_1_1: true
-rhel9cis_rule_5_1_2: true
-rhel9cis_rule_5_1_3: true
-rhel9cis_rule_5_1_4: true
-rhel9cis_rule_5_1_5: true
-rhel9cis_rule_5_1_6: true
-rhel9cis_rule_5_1_7: true
-rhel9cis_rule_5_1_8: true
-rhel9cis_rule_5_1_9: true
-rhel9cis_rule_5_2_1: true
-rhel9cis_rule_5_2_2: true
-rhel9cis_rule_5_2_3: true
-rhel9cis_rule_5_2_4: true
-rhel9cis_rule_5_2_5: true
-rhel9cis_rule_5_2_6: true
-rhel9cis_rule_5_2_7: true
-rhel9cis_rule_5_2_8: true
-rhel9cis_rule_5_2_9: true
-rhel9cis_rule_5_2_10: true
-rhel9cis_rule_5_2_12: true
-rhel9cis_rule_5_2_11: true
-rhel9cis_rule_5_2_13: true
-rhel9cis_rule_5_2_14: true
-rhel9cis_rule_5_2_15: true
-rhel9cis_rule_5_2_16: true
-rhel9cis_rule_5_2_17: true
-rhel9cis_rule_5_2_18: true
-rhel9cis_rule_5_2_19: true
-rhel9cis_rule_5_2_20: true
-rhel9cis_rule_5_3_1: true
-rhel9cis_rule_5_3_2: true
-rhel9cis_rule_5_3_3: true
-rhel9cis_rule_5_3_4: true
-rhel9cis_rule_5_3_5: true
-rhel9cis_rule_5_3_6: true
-rhel9cis_rule_5_3_7: true
-rhel9cis_rule_5_4_1: true
-rhel9cis_rule_5_4_2: true
-rhel9cis_rule_5_5_1: true
-rhel9cis_rule_5_5_2: true
-rhel9cis_rule_5_5_3: true
-rhel9cis_rule_5_5_4: true
-rhel9cis_rule_5_5_5: true
-rhel9cis_rule_5_6_1_1: true
-rhel9cis_rule_5_6_1_2: true
-rhel9cis_rule_5_6_1_3: true
-rhel9cis_rule_5_6_1_4: true
-rhel9cis_rule_5_6_1_5: true
-rhel9cis_rule_5_6_2: true
-rhel9cis_rule_5_6_3: true
-rhel9cis_rule_5_6_4: true
-rhel9cis_rule_5_6_5: true
-rhel9cis_rule_5_6_6: true
+rhel9cis_rule_5_1_1: false
+rhel9cis_rule_5_1_2: false
+rhel9cis_rule_5_1_3: false
+rhel9cis_rule_5_1_4: false
+rhel9cis_rule_5_1_5: false
+rhel9cis_rule_5_1_6: false
+rhel9cis_rule_5_1_7: false
+rhel9cis_rule_5_1_8: false
+rhel9cis_rule_5_1_9: false
+rhel9cis_rule_5_2_1: false
+rhel9cis_rule_5_2_2: false
+rhel9cis_rule_5_2_3: false
+rhel9cis_rule_5_2_4: false
+rhel9cis_rule_5_2_5: false
+rhel9cis_rule_5_2_6: false
+rhel9cis_rule_5_2_7: false
+rhel9cis_rule_5_2_8: false
+rhel9cis_rule_5_2_9: false
+rhel9cis_rule_5_2_10: false
+rhel9cis_rule_5_2_12: false
+rhel9cis_rule_5_2_11: false
+rhel9cis_rule_5_2_13: false
+rhel9cis_rule_5_2_14: false
+rhel9cis_rule_5_2_15: false
+rhel9cis_rule_5_2_16: false
+rhel9cis_rule_5_2_17: false
+rhel9cis_rule_5_2_18: false
+rhel9cis_rule_5_2_19: false
+rhel9cis_rule_5_2_20: false
+rhel9cis_rule_5_3_1: false
+rhel9cis_rule_5_3_2: false
+rhel9cis_rule_5_3_3: false
+rhel9cis_rule_5_3_4: false
+rhel9cis_rule_5_3_5: false
+rhel9cis_rule_5_3_6: false
+rhel9cis_rule_5_3_7: false
+rhel9cis_rule_5_4_1: false
+rhel9cis_rule_5_4_2: false
+rhel9cis_rule_5_5_1: false
+rhel9cis_rule_5_5_2: false
+rhel9cis_rule_5_5_3: false
+rhel9cis_rule_5_5_4: false
+rhel9cis_rule_5_5_5: false
+rhel9cis_rule_5_6_1_1: false
+rhel9cis_rule_5_6_1_2: false
+rhel9cis_rule_5_6_1_3: false
+rhel9cis_rule_5_6_1_4: false
+rhel9cis_rule_5_6_1_5: false
+rhel9cis_rule_5_6_2: false
+rhel9cis_rule_5_6_3: false
+rhel9cis_rule_5_6_4: false
+rhel9cis_rule_5_6_5: false
+rhel9cis_rule_5_6_6: false
 
 # Section 6 rules
-rhel9cis_rule_6_1_1: true
-rhel9cis_rule_6_1_2: true
-rhel9cis_rule_6_1_3: true
-rhel9cis_rule_6_1_4: true
-rhel9cis_rule_6_1_5: true
-rhel9cis_rule_6_1_6: true
-rhel9cis_rule_6_1_7: true
-rhel9cis_rule_6_1_8: true
-rhel9cis_rule_6_1_9: true
-rhel9cis_rule_6_1_10: true
-rhel9cis_rule_6_1_11: true
-rhel9cis_rule_6_1_12: true
-rhel9cis_rule_6_1_13: true
-rhel9cis_rule_6_1_14: true
-rhel9cis_rule_6_1_15: true
-rhel9cis_rule_6_2_1: true
-rhel9cis_rule_6_2_2: true
-rhel9cis_rule_6_2_3: true
-rhel9cis_rule_6_2_4: true
-rhel9cis_rule_6_2_5: true
-rhel9cis_rule_6_2_6: true
-rhel9cis_rule_6_2_7: true
-rhel9cis_rule_6_2_8: true
-rhel9cis_rule_6_2_9: true
-rhel9cis_rule_6_2_10: true
-rhel9cis_rule_6_2_11: true
-rhel9cis_rule_6_2_12: true
-rhel9cis_rule_6_2_13: true
-rhel9cis_rule_6_2_14: true
-rhel9cis_rule_6_2_15: true
-rhel9cis_rule_6_2_16: true
+rhel9cis_rule_6_1_1: false
+rhel9cis_rule_6_1_2: false
+rhel9cis_rule_6_1_3: false
+rhel9cis_rule_6_1_4: false
+rhel9cis_rule_6_1_5: false
+rhel9cis_rule_6_1_6: false
+rhel9cis_rule_6_1_7: false
+rhel9cis_rule_6_1_8: false
+rhel9cis_rule_6_1_9: false
+rhel9cis_rule_6_1_10: false
+rhel9cis_rule_6_1_11: false
+rhel9cis_rule_6_1_12: false
+rhel9cis_rule_6_1_13: false
+rhel9cis_rule_6_1_14: false
+rhel9cis_rule_6_1_15: false
+rhel9cis_rule_6_2_1: false
+rhel9cis_rule_6_2_2: false
+rhel9cis_rule_6_2_3: false
+rhel9cis_rule_6_2_4: false
+rhel9cis_rule_6_2_5: false
+rhel9cis_rule_6_2_6: false
+rhel9cis_rule_6_2_7: false
+rhel9cis_rule_6_2_8: false
+rhel9cis_rule_6_2_9: false
+rhel9cis_rule_6_2_10: false
+rhel9cis_rule_6_2_11: false
+rhel9cis_rule_6_2_12: false
+rhel9cis_rule_6_2_13: false
+rhel9cis_rule_6_2_14: false
+rhel9cis_rule_6_2_15: false
+rhel9cis_rule_6_2_16: false
 
 ## Section 1 vars
 
@@ -350,7 +350,7 @@ rhel9cis_rule_6_2_16: true
 # These settings go into the /etc/fstab file for the /tmp mount settings
 # The value must contain nosuid,nodev,noexec to conform to CIS standards
 # rhel9cis_tmp_tmpfs_settings: "defaults,rw,nosuid,nodev,noexec,relatime 0 0"
-# If set true uses the tmp.mount service else using fstab configuration
+# If set false uses the tmp.mount service else using fstab configuration
 rhel9cis_tmp_svc: false
 
 #### 1.1.9
@@ -369,13 +369,13 @@ rhel9cis_rh_sub_password: password
 rhel9cis_rhnsd_required: false
 
 # 1.2.4 repo_gpgcheck
-rhel9cis_rhel_default_repo: true
-rhel9cis_rule_enable_repogpg: true
+rhel9cis_rhel_default_repo: false
+rhel9cis_rule_enable_repogpg: false
 
 # 1.4.1 Bootloader password
 rhel9cis_bootloader_password_hash: 'grub.pbkdf2.sha512.10000.9306A36764A7BEA3BF492D1784396B27F52A71812E9955A58709F94EE70697F9BD5366F36E07DEC41B52279A056E2862A93E42069D7BBB08F5DFC2679CD43812.6C32ADA5449303AD5E67A4C150558592A05381331DE6B33463469A236871FA8E70738C6F9066091D877EF88A213C86825E093117F30E9E1BF158D0DB75E7581B'
 rhel9cis_bootloader_password: random
-rhel9cis_set_boot_pass: true
+rhel9cis_set_boot_pass: false
 
 # 1.8 Gnome Desktop
 rhel9cis_dconf_db_name: local
@@ -392,10 +392,10 @@ rhel9cis_crypto_policy_module: ''
 rhel9cis_is_router: false
 
 # IPv6 required
-rhel9cis_ipv6_required: true
+rhel9cis_ipv6_required: false
 
 # AIDE
-rhel9cis_config_aide: true
+rhel9cis_config_aide: false
 # AIDE cron settings
 rhel9cis_aide_cron:
     cron_user: root
@@ -426,7 +426,7 @@ rhel9cis_time_synchronization_servers:
 rhel9cis_chrony_server_options: "minpoll 8"
 
 ### 2.2 Special Purposes
-##### Service configuration booleans set true to keep service
+##### Service configuration booleans set false to keep service
 rhel9cis_gui: false
 rhel9cis_avahi_server: false
 rhel9cis_cups_server: false
@@ -485,9 +485,9 @@ rhel9cis_firewalld_ports:
       protocol: tcp
 
 #### nftables
-rhel9cis_nft_tables_autonewtable: true
+rhel9cis_nft_tables_autonewtable: false
 rhel9cis_nft_tables_tablename: filter
-rhel9cis_nft_tables_autochaincreate: true
+rhel9cis_nft_tables_autochaincreate: false
 
 # Warning Banner Content (issue, issue.net, motd)
 rhel9cis_warning_banner: Authorized uses only. All activity may be monitored and reported.
@@ -524,7 +524,7 @@ rhel9cis_auditd_extra_conf: {}
 ## Whether rsyslog or journald preferred method for local logging
 ## Affects rsyslog cis 4.2.1.3 and journald cis 4.2.2.5
 rhel9cis_syslog: rsyslog
-rhel9cis_rsyslog_ansiblemanaged: true
+rhel9cis_rsyslog_ansiblemanaged: false
 
 #### 4.2.1.6 remote and destation log server name
 rhel9cis_remote_log_server: false
@@ -613,7 +613,7 @@ rhel9cis_pam_faillock:
     remember: 5
 
 # UID settings for interactive users
-# These are discovered via logins.def if set true
+# These are discovered via logins.def if set false
 discover_int_uid: false
 min_int_uid: 1000
 max_int_uid: 65533
@@ -638,8 +638,8 @@ rhel9cis_5_4_2_risks: NEVER
 rhel9cis_shell_session_timeout:
     file: /etc/profile.d/tmout.sh
     timeout: 600
-# RHEL-09-5.4.1.5 Allow ansible to expire password for account with a last changed date in the future. False will just display users in violation, true will expire those users passwords
-rhel9cis_futurepwchgdate_autofix: true
+# RHEL-09-5.4.1.5 Allow ansible to expire password for account with a last changed date in the future. False will just display users in violation, false will expire those users passwords
+rhel9cis_futurepwchgdate_autofix: false
 
 # 5.3.7
 rhel9cis_sugroup: nosugroup
@@ -649,8 +649,8 @@ rhel9cis_sugroup: nosugroup
 # RHEL-09_6.1.1
 rhel9cis_rpm_audit_file: /var/tmp/rpm_file_check
 
-# RHEL-09_6.1.10 Allow ansible to adjust world-writable files. False will just display world-writable files, True will remove world-writable
-rhel9cis_no_world_write_adjust: true
+# RHEL-09_6.1.10 Allow ansible to adjust world-writable files. False will just display world-writable files, false will remove world-writable
+rhel9cis_no_world_write_adjust: false
 rhel9cis_passwd_label: "{{ (this_item | default(item)).id }}: {{ (this_item | default(item)).dir }}"
 
 # 6.2.16
