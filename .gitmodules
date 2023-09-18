@@ -1,0 +1,3 @@
+[submodule "role/RHEL9-CIS"]
+	path = role/RHEL9-CIS
+	url = https://github.com/ansible-lockdown/RHEL9-CIS
