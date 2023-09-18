@@ -16,7 +16,7 @@
         --profile xccdf_org.ssgproject.content_profile_cis \
         --report report.html \
         /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml
-      ignore_errors: false
+      ignore_errors: true
       
     - name: copy the file from remote to localhost
       ansible.builtin.fetch:
