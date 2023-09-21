@@ -21,7 +21,7 @@
 
 
     - name: call RHEL9-CIS-devel roles
-      ansible.builtin.include_roles:
+      ansible.builtin.include_role:
         name: RHEL9-CIS-devel
         
 
