@@ -3,7 +3,7 @@
   hosts: all
   become: yes
   tasks:
-  
+
     - name: install openscap-scanner and scap-security-guide
       ansible.builtin.package:
         name:
@@ -25,3 +25,7 @@
         group: awx
         mode: 0775
         flat: yes
+
+
+
+      
