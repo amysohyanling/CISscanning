@@ -75,7 +75,7 @@ audit_cmd_timeout: 60000
 # Section 1 rules
 rhel9cis_rule_1_1_1_1: false
 rhel9cis_rule_1_1_1_2: false
-rhel9cis_rule_1_1_2_1: true
+rhel9cis_rule_1_1_2_1: false
 rhel9cis_rule_1_1_2_2: false
 rhel9cis_rule_1_1_2_3: false
 rhel9cis_rule_1_1_2_4: false

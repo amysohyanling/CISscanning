@@ -4,13 +4,18 @@
 
   vars:
     cis_remediation:
-      - '1.1.2.1'
+      - '5.5.2'
 
   tasks:
     - name: user input
       ansible.builtin.set_fact:
         "rhel9cis_rule_{{ item | replace('.','_') }}: true "
       loop: "{{ cis_remediation  }}"
+
+    - name: Dispay all variables known for a hosts
+      ansible.builtin.debug:
+        var: hostvars[inventory_hostname]
+
 
     - name: call RHEL9-CIS-devel roles
       ansible.builtin.include_role:
