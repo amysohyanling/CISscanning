@@ -4,8 +4,8 @@
 
   vars:
     cis_remediation:
-      - '5.5.2'
-
+      - '5.2.7'
+      
   tasks:
     - name: user input
       ansible.builtin.set_fact:
