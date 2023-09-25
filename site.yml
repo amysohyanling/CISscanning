@@ -9,7 +9,7 @@
   tasks:
     - name: user input
       ansible.builtin.set_fact:
-        "rhel9cis_rule_{{ item | replace('_','.') }}: true "
+        "rhel9cis_rule_{{ item | replace('.','_') }}: true "
       loop: "{{ cis_remediation  }}"
 
     - name: call RHEL9-CIS-devel roles
