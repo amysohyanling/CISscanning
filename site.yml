@@ -54,7 +54,6 @@
       ansible.builtin.debug:
         var: hostvars[inventory_hostname]
 
-
     - name: call RHEL9-CIS-devel roles
       ansible.builtin.include_role:
         name: RHEL9-CIS-devel
